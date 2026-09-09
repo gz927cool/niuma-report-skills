@@ -1,0 +1,15 @@
+name: gz-plain-report
+version: 0.2.0
+description: >
+  Declarative manifest。共享纪律（格式基线/作者口吻、数字纪律）经 always_load
+  进入上下文；对外交付语境的缺口表述规则按需加载。
+
+always_load:
+  - ../gz-shared/core/report-baseline.md
+  - ../gz-shared/core/number-discipline.md
+
+references:
+  on_demand:
+    - condition: >
+        报告用于对外交付/合同场景，需要研究稿/交付稿的缺口表述分层规则
+      path: ../gz-shared/core/delivery-context.md

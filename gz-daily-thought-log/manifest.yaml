@@ -1,0 +1,5 @@
+name: gz-daily-thought-log
+version: 0.1.0
+description: gz-shared 收编暂缓，待与 daily-work-log 同步重构时再接入；当前无轴、无按需引用。
+
+always_load: []

@@ -1,0 +1,17 @@
+name: gz-proposal-report
+version: 0.2.0
+description: >
+  Declarative manifest。格式基线经 always_load 进入上下文；提案模板与常见
+  陷阱清单按需加载。
+
+always_load:
+  - ../gz-shared/core/report-baseline.md
+
+references:
+  on_demand:
+    - condition: >
+        起草提案正文，需要五段结构逐章的内容模板
+      path: references/proposal-template.md
+    - condition: >
+        提案完稿后自查，或发现叙事/章节交织/落点/图等问题需要逐条修复
+      path: references/common-pitfalls.md

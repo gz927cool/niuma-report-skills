@@ -1,0 +1,30 @@
+name: gz-analysis-report
+version: 0.2.0
+description: >
+  Declarative manifest。SKILL.md 用它决定何时加载哪些模块：共享纪律经 always_load
+  进入上下文，交付语境按轴值加载对应 fragment，插图纪律按需加载。
+
+always_load:
+  - ../gz-shared/core/report-baseline.md
+  - ../gz-shared/core/number-discipline.md
+
+axes:
+  delivery_context:
+    detect: |
+      判定报告用途：是否对外交付/合同场景。用户声明优先；未声明且判断不了时
+      先问一句。面向内部读者的报告用 research。
+    values:
+      research: static/fragments/delivery_context/research.md
+      delivery: static/fragments/delivery_context/delivery.md
+    default: research
+    multi: false
+
+references:
+  on_demand:
+    - condition: >
+        报告含插图，需要按可出版标准自查（元素必要性/文字不压线/动态特性用真实数据/
+        多面板对齐/无内部标记）
+      path: references/figure-discipline.md
+    - condition: >
+        报告用于对外交付/合同场景（轴值 delivery），需要研究稿/交付稿通用分层规则
+      path: ../gz-shared/core/delivery-context.md

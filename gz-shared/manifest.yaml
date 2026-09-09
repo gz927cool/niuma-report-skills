@@ -1,0 +1,21 @@
+name: gz-shared
+version: 0.1.0
+description: >
+  gz 报告技能库的内部共享参考包。任务逻辑与输出格式在各调用方技能；
+  本包只提供共享定义，供其他 gz-* 技能按 condition→path 按需加载，绝不预载整个包。
+
+always_load: []
+
+references:
+  on_demand:
+    - condition: >
+        任何报告类文档动笔前需要格式基线与作者口吻基线
+        （由 gz-* 报告技能的 always_load 引用）
+      path: core/report-baseline.md
+    - condition: >
+        数据分析/通俗版报告需要数字纪律：实际算数、口径一致、先出现再引用、
+        负结果同权重、对照锚点
+      path: core/number-discipline.md
+    - condition: >
+        报告用于对外交付/合同场景，需要研究稿与交付稿的诚实形态分层规则
+      path: core/delivery-context.md

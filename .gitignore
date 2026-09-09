@@ -1,0 +1,10 @@
+*workspace/
+.omc/
+
+skytech*
+omc*
+openspec*
+nature*
+graphify/
+
+test.py

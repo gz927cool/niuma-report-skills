@@ -1,0 +1,18 @@
+name: gz-daily-work-log
+version: 0.2.0
+description: >
+  Declarative manifest。格式基线经 always_load 进入上下文；对话补全与特殊
+  场景两个模块按条件加载。
+
+always_load:
+  - ../gz-shared/core/report-baseline.md
+
+references:
+  on_demand:
+    - condition: >
+        commit message 无法可靠判断工作动机（泛化动词未说明具体问题、同一
+        模块多个提交关系不明、行为与直觉相反、一个提交跨多模块看不出主线）
+      path: references/conversation-intent.md
+    - condition: >
+        遇到当日无提交/跨多日/当日工作较少/无对话记录可用等特殊场景
+      path: references/special-cases.md

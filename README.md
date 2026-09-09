@@ -39,7 +39,7 @@
 
 **场景速查**：今天干了啥 → `gz-daily-work-log`；今天想了啥 → `gz-daily-thought-log`；这周/这阶段干了啥 → `gz-leadership-work-report`；想让领导要资源 → `gz-proposal-report`；数据跑完了要交报告 → `gz-analysis-report`；领导说"看不懂" → `gz-plain-report`。
 
-每个技能目录下的 `SKILL.md` 就是完整的写作方法论（提示词级细节，Claude Code 读取后直接执行）；`gz-proposal-report` 额外附有 `references/`（提案模板 + 常见踩坑）。
+每个技能目录下的 `SKILL.md` 是完整写作方法论，配声明式 `manifest.yaml`（声明 always_load 共享纪律与按需 references，按需读入）。部分技能附 `references/` 与 `static/fragments/` 条件模块（提案模板/插图纪律/对话补全等，见各技能目录）；[`gz-shared/`](gz-shared/) 是内部共享依赖包（格式基线 / 数字纪律 / 交付语境），供其他 gz-* 技能按需引用——安装时 `cp -r gz-*` 已整体带上，不要只拷贝单个技能目录。
 
 ---
 
@@ -73,6 +73,8 @@ cp -r niuma-report-skills/gz-* ~/.claude/skills/
 # 方式二：单项目使用 / 团队随仓库共享
 cp -r niuma-report-skills/gz-* your-project/.claude/skills/
 ```
+
+> 注：[`gz-shared/`](gz-shared/) 是内部共享依赖包，上面的 `gz-*` 通配已整体带上；不要只拷贝单个技能目录而漏掉它。
 
 重启 Claude Code（或新开会话），技能即生效。
 

@@ -1,0 +1,7 @@
+name: gz-leadership-work-report
+version: 0.2.0
+description: >
+  Declarative manifest。作者口吻与格式基线由 gz-shared 统一约束（always_load）。
+
+always_load:
+  - ../gz-shared/core/report-baseline.md
