@@ -1,5 +1,5 @@
 name: gz-analysis-report
-version: 0.2.0
+version: 0.2.1
 description: >
   Declarative manifest。SKILL.md 用它决定何时加载哪些模块：共享纪律经 always_load
   进入上下文，交付语境按轴值加载对应 fragment，插图纪律按需加载。
