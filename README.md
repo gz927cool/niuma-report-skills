@@ -26,7 +26,7 @@
 
 ## 🗂️ 仓库目录
 
-目前收录 **6 个报告类 Claude Code 技能**，覆盖打工人从"记录今天"到"立项拿资源"的全部写作场景：
+目前收录 **7 个 Claude Code 技能**——6 个报告类，外加 1 个开发辅助类（git 提交信息）——覆盖打工人从"记录今天"到"立项拿资源"，再到"把提交写明白"的全部写作场景：
 
 | 技能目录 | 一句话定位 | 什么时候用它 |
 |---|---|---|
@@ -36,10 +36,11 @@
 | [`gz-proposal-report/`](gz-proposal-report/) | 📑 技术提案 / 立项报告 | 向决策层要资源、求立项——讲清"为什么做、值不值、要什么支持"，和给实施团队看的设计文档是两回事 |
 | [`gz-analysis-report/`](gz-analysis-report/) | 📈 数据分析结果报告 | 从数据/模型产出原生写成、独立可读的结果文书，给业务/技术领导/第三方混合读者看 |
 | [`gz-plain-report/`](gz-plain-report/) | 🗣️ 通俗版报告 | 把技术报告"翻译成人话"——给不懂统计和代码的业务方独立读懂的版本 |
+| [`gz-git-message/`](gz-git-message/) | 📝 git 提交信息 | 写 commit 时——动机行+改动行一句一行，不罗列字段/代码名，数月后重读还能想起"为什么改" |
 
-**场景速查**：今天干了啥 → `gz-daily-work-log`；今天想了啥 → `gz-daily-thought-log`；这周/这阶段干了啥 → `gz-leadership-work-report`；想让领导要资源 → `gz-proposal-report`；数据跑完了要交报告 → `gz-analysis-report`；领导说"看不懂" → `gz-plain-report`。
+**场景速查**：今天干了啥 → `gz-daily-work-log`；今天想了啥 → `gz-daily-thought-log`；这周/这阶段干了啥 → `gz-leadership-work-report`；想让领导要资源 → `gz-proposal-report`；数据跑完了要交报告 → `gz-analysis-report`；领导说"看不懂" → `gz-plain-report`；提交代码要写提交信息 → `gz-git-message`。
 
-每个技能目录下的 `SKILL.md` 是完整写作方法论，配声明式 `manifest.yaml`（声明 always_load 共享纪律与按需 references，按需读入）。部分技能附 `references/` 与 `static/fragments/` 条件模块（提案模板/插图纪律/对话补全等，见各技能目录）；[`gz-shared/`](gz-shared/) 是内部共享依赖包（格式基线 / 数字纪律 / 交付语境），供其他 gz-* 技能按需引用——安装时 `cp -r gz-*` 已整体带上，不要只拷贝单个技能目录。
+报告类技能目录下的 `SKILL.md` 是完整写作方法论，配声明式 `manifest.yaml`（声明 always_load 共享纪律与按需 references，按需读入）；部分技能附 `references/` 与 `static/fragments/` 条件模块（提案模板/插图纪律/对话补全等，见各技能目录）；[`gz-shared/`](gz-shared/) 是内部共享依赖包（格式基线 / 数字纪律 / 交付语境），供其他 gz-* 技能按需引用——安装时 `cp -r gz-*` 已整体带上，不要只拷贝单个技能目录。`gz-git-message/` 是单文件技能，一个 `SKILL.md` 就是全部，拷走即用。
 
 ---
 
@@ -90,6 +91,7 @@ cp -r niuma-report-skills/gz-* your-project/.claude/skills/
 | "把这个方案写成立项材料" | `gz-proposal-report` |
 | "把这批数据的结果写份报告" | `gz-analysis-report` |
 | "写个不懂技术的人也能看懂的版本" | `gz-plain-report` |
+| "帮我把这些改动提交了，信息写好点" | `gz-git-message` |
 
 也可以显式点名：在对话里输入 `/gz-daily-work-log`，或直接说"用 gz-plain-report 改写这份报告"。
 
