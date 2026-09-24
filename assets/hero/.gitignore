@@ -1,0 +1,9 @@
+# 动画源文件与渲染管线仅保留在本地，仓库只收 hero.gif
+node_modules/
+frames/
+palette.png
+hero.html
+hero.mp4
+render.mjs
+package.json
+package-lock.json
